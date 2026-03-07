@@ -44,7 +44,7 @@
 <body>
     
   <section class="w-[430px] bg-[##F8FAFC] mx-auto shadow-md  mt-28 border-2 border-gray-50 ">
-    <div>
+    <div id="login-card">
       <div class="items-center justify-items-center mt-9">
         <div>
         <img src="./assets/github-logo.png" alt="">
@@ -61,19 +61,19 @@
                    <fieldset class="">
 
                           <label class="label font-medium text-black text-[16px] mb-[5px]">Username</label> <br>
-                          <input id="enter-number" maxlength="8" minlength="5" type="text" class="input rounded-sm bg-[#F4F5F7] border-none" placeholder="Enter Username" />
+                          <input id="enter-username" maxlength="8" minlength="5" type="text" class="input rounded-sm bg-[#F4F5F7] border-none" placeholder="Enter Username" />
                           <br><label class="label text-[#4A00FF] text-[14px] mb-5">Default: admin</label>
 
 
                           <br><label class="label font-medium text-black text-[16px] mb-[5px]">Password</label> <br>
-                          <input id="enter-number" maxlength="11" minlength="11" type="text" class="input rounded-sm bg-[#F4F5F7] border-none" placeholder="Enter Password" />
+                          <input id="enter-password" maxlength="9" minlength="4" type="text" class="input rounded-sm bg-[#F4F5F7] border-none" placeholder="Enter Password" />
                           <br><label class="label text-[#4A00FF] text-[14px] mb-4">Default: admin123</label> <br>
 
 
           
 
 
-                         <button class="btn btn-primary mt-4 px-35 rounded-lg mb-6">Sign In</button>
+                         <button id="btn-click" class="btn btn-primary mt-4 px-35 rounded-lg mb-6">Sign In</button>
         </fieldset>
               </div>
           </div>
@@ -100,5 +100,7 @@
 
     </div>
   </section>
+
+  <script src="./Script/js.js"></script>
 </body>
 </html>
