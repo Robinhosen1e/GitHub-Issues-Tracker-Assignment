@@ -45,10 +45,157 @@
   <div class="flex gap-2 pr-4">
     <input type="text" placeholder= "Search issues..." class="input input-bordered pr-10 md:pr-24 w-24 md:w-auto" />
     <div class="dropdown dropdown-end">
+      <button class="btn btn-primary text-nowrap"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
       <button class="btn btn-primary text-nowrap"><i class="fa-solid fa-plus"></i> New Issue</button>
     </div>
   </div>
 </div>
     </header>
+
+
+    <main>
+        <section>
+            <div class="mb-6 space-x-2 w-10/12 mx-auto p-10 shadow-md border-2 border-gray-50 mt-16">
+              <button  class="btn btn-soft text-gray-500 bg-white border border-neutral-content hover:bg-primary hover:text-white px-10 rounded-md">All</button>
+              <button  class="btn btn-soft text-gray-500 bg-white border border-neutral-content hover:bg-primary hover:text-white px-10 rounded-md">Open</button>
+              <button  class="btn btn-soft text-gray-500 bg-white border border-neutral-content hover:bg-primary hover:text-white px-10 rounded-md">Closed</button>
+            </div>
+        </section>
+
+        <section class="w-10/12 mx-auto  ">
+
+          <div class=" p-10 border-2 border-gray-100 rounded-t-md inset-shadow-2xs mt-16 justify-between flex">
+                <div class="flex items-center">
+                    <div class="bg-[#4A00FF10] p-2 mr-2 rounded-full">
+                      <img class="w-9 h-9" src="./assets/Aperture.png" alt="">
+                    </div>
+                   <div>
+                    <h2  class="font-semibold text-xl">50 Issues</h2>
+                    <p class="text-[#64748B]">Track and manage your project issues</p>
+                   </div>
+                </div>
+
+                <div class="flex items-center space-x-5">
+                  <div class="flex items-center">
+                    <img class="w-3 h-3" src="./assets/Ellipse 2.0.png" alt="">
+                    <p class="font-medium ml-1">Open</p>
+                  </div>
+                    
+                  <div class="flex items-center">
+                     <img class="w-3 h-3" src="./assets/Ellipse 2.png" alt="">
+                     <p class="font-medium ml-1">Closed</p>
+                  </div>
+                </div>
+            </div>
+
+            <div class="px-12 border-2  border-gray-50 shadow-md mb-14">
+
+              <div class="pt-7 grid grid-cols-4 gap-4 mb-10">
+
+                   <div class=" border-t-4 border-t-[#00A96E] rounded-lg ">
+                    <div class="p-6 border-2 rounded-lg border-gray-50 shadow-md">
+                        <div class="justify-between flex items-center mb-6">
+                          <img class="w-7 h-7" src="./assets/Open-Status.png" alt="">
+                          <h3 class="bg-red-100 font-medium px-5 text-red-500 py-[-10px] rounded-3xl">HIGH</h3>
+                        </div>
+                        <div>
+                          <div>
+                            <h1 class="font-semibold text-xl text-[#1F2937] mb-2">Fix navigation menu on mobile devices</h1>
+                            <p class="text-[#64748B] ">The navigation menu doesn't collapse properly on mobile devices...</p>
+                          </div>
+                        </div>
+                        <div class="border-b-2 border-gray-200 pb-4">
+                            <div class="flex space-x-4">
+                                <button class="flex bg-[#FEECEC] items-center py-1 px-3 mt-4 rounded-3xl border-1 border-[#FECACA] space-x-1">
+                                  <img class="w-4 h-4" src="./assets/BugDroid.png" alt="">
+                                  <h1 class="text-[#EF4444] font-medium ">BUG</h1>
+                                </button>
+                                <button class="flex bg-[#FFF8DB] items-center py-1 px-3 mt-4 rounded-3xl border-1 border-[#FDE68A] space-x-1">
+                                  <img class="w-5 h-5" src="./assets/Lifebuoy.png" alt="">
+                                  <h1 class="text-[#D97706] font-medium ">HELP WANTED</h1>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-[#64748B] space-y-2">
+                           <p>#1 by john_doe</p>
+                           <p>1/15/2024</p>
+                        </div>
+                        
+                    </div>
+                   </div>
+                    
+                   <div class=" border-t-4 border-t-[#00A96E] rounded-lg ">
+                    <div class="p-6 border-2 rounded-lg border-gray-50 shadow-md">
+                        <div class="justify-between flex items-center mb-6">
+                          <img class="w-7 h-7" src="./assets/Open-Status.png" alt="">
+                          <h3 class="bg-[#FFF6D1] font-medium px-5 text-[#F59E0B] py-[-10px] rounded-3xl">Medium</h3>
+                        </div>
+                        <div>
+                          <div>
+                            <h1 class="font-semibold text-xl text-[#1F2937] mb-2">Fix navigation menu on mobile devices</h1>
+                            <p class="text-[#64748B] ">The navigation menu doesn't collapse properly on mobile devices...</p>
+                          </div>
+                        </div>
+                        <div class="border-b-2 border-gray-200 pb-4">
+                            <div class="flex space-x-4">
+                                <button class="flex bg-[#FEECEC] items-center py-1 px-3 mt-4 rounded-3xl border-1 border-[#FECACA] space-x-1">
+                                  <img class="w-4 h-4" src="./assets/BugDroid.png" alt="">
+                                  <h1 class="text-[#EF4444] font-medium ">BUG</h1>
+                                </button>
+                                <button class="flex bg-[#FFF8DB] items-center py-1 px-3 mt-4 rounded-3xl border-1 border-[#FDE68A] space-x-1">
+                                  <img class="w-5 h-5" src="./assets/Lifebuoy.png" alt="">
+                                  <h1 class="text-[#D97706] font-medium ">HELP WANTED</h1>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-[#64748B] space-y-2">
+                           <p>#1 by john_doe</p>
+                           <p>1/15/2024</p>
+                        </div>
+                        
+                    </div>
+                   </div>
+
+                   <div class=" border-t-4 border-t-[#A855F7] rounded-lg ">
+                    <div class="p-6 border-2 rounded-lg border-gray-50 shadow-md">
+                        <div class="justify-between flex items-center mb-6">
+                          <img class="w-7 h-7" src="./assets/Closed- Status .png" alt="">
+                          <h3 class="bg-[#EEEFF2] font-medium px-5 text-[#9CA3AF] py-[-10px] rounded-3xl">LOW</h3>
+                        </div>
+                        <div>
+                          <div>
+                            <h1 class="font-semibold text-xl text-[#1F2937] mb-2">Fix navigation menu on mobile devices</h1>
+                            <p class="text-[#64748B] ">The navigation menu doesn't collapse properly on mobile devices...</p>
+                          </div>
+                        </div>
+                        <div class="border-b-2 border-gray-200 pb-4">
+                            <div class="flex space-x-4">
+                                <button class="flex bg-[#FEECEC] items-center py-1 px-3 mt-4 rounded-3xl border-1 border-[#FECACA] space-x-1">
+                                  <img class="w-4 h-4" src="./assets/BugDroid.png" alt="">
+                                  <h1 class="text-[#EF4444] font-medium ">BUG</h1>
+                                </button>
+                                <button class="flex bg-[#FFF8DB] items-center py-1 px-3 mt-4 rounded-3xl border-1 border-[#FDE68A] space-x-1">
+                                  <img class="w-5 h-5" src="./assets/Lifebuoy.png" alt="">
+                                  <h1 class="text-[#D97706] font-medium ">HELP WANTED</h1>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-[#64748B] space-y-2">
+                           <p>#1 by john_doe</p>
+                           <p>1/15/2024</p>
+                        </div>
+                        
+                    </div>
+                    </div>
+
+    
+              </div>
+
+            </div>
+        </section>
+    </main>
 </body>
 </html>
