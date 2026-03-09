@@ -34,6 +34,19 @@ function showSection (id , btn){
 }
 
 
+function countCard (){
+
+  const allContainerCard = allContainer.children.length;
+  const openContainerCard = openContainer.children.length;
+  const closeContainerCard = closeContainer.children.length;
+
+  document.getElementById("all-container-total-card").innerText = allContainerCard + " Issues";
+
+  document.getElementById("open-container-total-card").innerText = openContainerCard + " Issues";
+
+  document.getElementById("close-container-total-card").innerText = closeContainerCard + " Issues";
+
+}
 
 
 const issuesData = async () =>{
@@ -47,7 +60,7 @@ const issuesData = async () =>{
             openShow(allData);
             closeShow(allData);
 
-            
+            countCard();
             manageSpinner(false)
         });
 
@@ -245,6 +258,6 @@ document.getElementById("btn-search").addEventListener('click', () => {
     allContainer.innerHTML = "";
 
     filtered.forEach(card => allContainer.append(createCard(card)));
-    
+    countCard();
     manageSpinner(false)
 });
