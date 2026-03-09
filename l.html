@@ -1,0 +1,203 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GitHub Issues Tracker</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+.section{
+display:none;
+}
+
+.section.active{
+display:grid;
+}
+
+.active-btn{
+background:#4A00FF;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body class="bg-gray-100">
+
+<header class="shadow bg-white p-4 mb-10 flex justify-between">
+
+<h1 class="text-xl font-bold">GitHub Issues Tracker</h1>
+
+</header>
+
+<main class="w-10/12 mx-auto">
+
+<!-- Buttons -->
+
+<div class="mb-10 space-x-2">
+
+<button onclick="showSection('all',this)"
+class="filter-btn active-btn px-6 py-2 border rounded">
+All
+</button>
+
+<button onclick="showSection('open',this)"
+class="filter-btn px-6 py-2 border rounded">
+Open
+</button>
+
+<button onclick="showSection('close',this)"
+class="filter-btn px-6 py-2 border rounded">
+Closed
+</button>
+
+</div>
+
+
+<!-- ALL -->
+
+<section id="all" class="section active grid grid-cols-4 gap-4">
+
+<div id="all-container"></div>
+
+</section>
+
+
+<!-- OPEN -->
+
+<section id="open" class="section grid grid-cols-4 gap-4">
+
+<div id="open-container"></div>
+
+</section>
+
+
+<!-- CLOSED -->
+
+<section id="close" class="section grid grid-cols-4 gap-4">
+
+<div id="close-container"></div>
+
+</section>
+
+</main>
+
+
+<script>
+
+const allContainer = document.getElementById("all-container")
+const openContainer = document.getElementById("open-container")
+const closeContainer = document.getElementById("close-container")
+
+function showSection(id,btn){
+
+const sections = document.querySelectorAll(".section")
+
+sections.forEach(sec=>{
+sec.classList.remove("active")
+})
+
+document.getElementById(id).classList.add("active")
+
+document.querySelectorAll(".filter-btn")
+.forEach(b=>b.classList.remove("active-btn"))
+
+btn.classList.add("active-btn")
+
+}
+
+
+
+function issuesData(){
+
+fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+.then(res=>res.json())
+.then(data=>{
+
+const cards = data.data
+
+renderIssues(cards,allContainer)
+
+const openIssues = cards.filter(card=>card.status==="open")
+renderIssues(openIssues,openContainer)
+
+const closeIssues = cards.filter(card=>card.status==="closed")
+renderIssues(closeIssues,closeContainer)
+
+})
+
+}
+
+
+
+function renderIssues(cards,container){
+
+container.innerHTML=""
+
+cards.forEach(card=>{
+
+const div = document.createElement("div")
+
+let borderColor="border-purple-500"
+let icon="./assets/Closed-Status.png"
+
+if(card.status==="open"){
+borderColor="border-green-500"
+icon="./assets/Open-Status.png"
+}
+
+div.innerHTML=`
+
+<div class="bg-white border-t-4 ${borderColor} p-6 rounded shadow">
+
+<div class="flex justify-between mb-4">
+
+<img class="w-6 h-6" src="${icon}">
+
+<span class="px-3 py-1 text-sm bg-gray-200 rounded">
+${card.priority}
+</span>
+
+</div>
+
+<h2 class="font-semibold text-lg mb-2">
+${card.title}
+</h2>
+
+<p class="text-gray-500 mb-4">
+${card.description}
+</p>
+
+<div class="text-sm text-gray-400">
+
+<p>Author: ${card.author}</p>
+
+<p>${new Date(card.createdAt).toLocaleDateString()}</p>
+
+</div>
+
+</div>
+
+`
+
+container.append(div)
+
+})
+
+}
+
+issuesData()
+
+</script>
+
+</body>
+</html>
+```
+
