@@ -9,10 +9,9 @@ Ans: ... used to spread/copy elements of an array or object
 What is the difference between map(), filter(), and forEach()?
 
 Ans: map(): array এর প্রতিটা element নিয়ে new array return করে।
-
 filter(): condition অনুযায়ী selected elements দিয়ে new array return করে।
-
 forEach(): শুধু loop করে, কিছু return করে না।
+
 
 What is an arrow function?
 Ans: ES6 এ আসা shorter function syntax।
